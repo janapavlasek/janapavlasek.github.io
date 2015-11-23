@@ -2,23 +2,66 @@
 <html>
     <head>
         <title>Jana Pavlasek</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/noscript.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style type="text/css">
+            header {
+                padding-bottom: 10px;
+            }
+            h1, p {
+                font-family: "Roboto", sans-serif;
+            }
+            a {
+                color: #565554;
+            }
+        </style>
     </head>
-    <body>
-        <div class="container">
-            <div class="placeholder">
-                <h1>Jana Pavlasek</h1>
-                <p>Website coming soon :)</p>
-                <p>Contact me: jbpavlasek@gmail.com</p>
-                <div class="social">
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/janapavlasek"><img class="logo" src="assets/images/linkedin.png"></a></li>
-                        <li><a href="https://github.com/janapavlasek"><img class="logo" src="assets/images/github.png"></a></li>
-                        <li><a href="https://twitter.com/janapavlasek"><img class="logo" src="assets/images/twitter.png"></a></li>
+    <body class="is-loading">
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Main -->
+            <section id="main">
+                <header>
+                    <h1>Jana Pavlasek</h1>
+                    <p>Website coming soon :)</p>
+                </header>
+
+                <footer>
+                    <ul class="icons">
+                        <li><a target="_blank" href="https://www.linkedin.com/in/janapavlasek" class="fa-linkedin">LinkedIn</a></li>
+                        <li><a target="_blank" href="https://github.com/janapavlasek" class="fa-github">GitHub</a></li>
+                        <li><a target="_blank" href="https://twitter.com/janapavlasek" class="fa-twitter">Twitter</a></li>
+                        <li><a href="mailto: jbpavlasek@gmail.com?subject=Hello" class="fa-at">Facebook</a></li>
                     </ul>
-                </div>
-            </div>
+                </footer>
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="copyright">
+                    <li>&copy; Jana Pavlasek</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
         </div>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script>
+                if ('addEventListener' in window) {
+                    window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+                    document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+                }
+            </script>
     </body>
 </html>
