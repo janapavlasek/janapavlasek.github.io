@@ -1706,11 +1706,17 @@ input, select, textarea {
 
 /* Container */
 
+	/*.container {
+		margin: 0 0 0 6em;
+		max-width: calc(100% - 12em);
+    	width: 45em;
+	}*/
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 4.5em);
 		width: 45em;
 	}
+
 
 		.container.xsmall {
 			width: 11.25em;
@@ -2012,6 +2018,12 @@ input, select, textarea {
 		position: relative;
 	}
 
+	.ai {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	}
+
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
@@ -2022,6 +2034,10 @@ input, select, textarea {
 		}
 
 		.icon > .label {
+			display: none;
+		}
+
+		.ai > .label {
 			display: none;
 		}
 
@@ -2683,7 +2699,7 @@ input, select, textarea {
 		text-align: center;
 		top: 0;
 		width: 23em;
-		right: 0;
+		left: 0;
 	}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -2794,7 +2810,7 @@ input, select, textarea {
 
 	#wrapper {
 		background: #fff;
-		padding-right: 23em;
+		padding-left: 23em;
 	}
 
 /* Main */
@@ -2805,6 +2821,9 @@ input, select, textarea {
 
 		#main > section > .container {
 			padding: 6em 0 4em 0;
+			margin: 0 0 0 6em;
+			max-width: calc(100% - 12em);
+	    	width: 45em;
 		}
 
 		#main > section:first-child {
@@ -2818,13 +2837,15 @@ input, select, textarea {
 		border-top: 0;
 		color: #c0c0c0;
 		overflow: hidden;
-		padding: 4em 0 2em 0;
+		padding: 3em 0 2em 0;
+		box-shadow: 0 50vh 0 50vh #fafafa;
 	}
 
 		#footer .copyright {
 			line-height: 1em;
 			list-style: none;
 			padding: 0;
+			text-align: center;
 		}
 
 			#footer .copyright li {
@@ -2872,7 +2893,7 @@ input, select, textarea {
 		/* Wrapper */
 
 			#wrapper {
-				padding-right: 21em;
+				padding-left: 21em;
 			}
 
 		/* Main */
@@ -2902,7 +2923,7 @@ input, select, textarea {
 		/* Wrapper */
 
 			#wrapper {
-				padding-right: 20em;
+				padding-left: 20em;
 			}
 
 	}
@@ -2957,11 +2978,11 @@ input, select, textarea {
 				top: 0;
 				width: 23em;
 				z-index: 10002;
-				-moz-transform: translateX(23em);
-				-webkit-transform: translateX(23em);
-				-ms-transform: translateX(23em);
-				transform: translateX(23em);
-				right: 0;
+				-moz-transform: translateX(-23em);
+				-webkit-transform: translateX(-23em);
+				-ms-transform: translateX(-23em);
+				transform: translateX(-23em);
+				left: 0;
 			}
 
 				#header > footer {
@@ -3016,7 +3037,7 @@ input, select, textarea {
 					font-weight: 700;
 					height: 44px;
 					line-height: 44px;
-					padding: 0 1em;
+					padding: 0 6em;
 					width: 100%;
 					text-align: left;
 				}
@@ -3034,7 +3055,7 @@ input, select, textarea {
 					width: 6em;
 					border: 0;
 					outline: 0;
-					right: 0;
+					left: 0;
 				}
 
 					#titleBar .toggle:before {
@@ -3058,14 +3079,14 @@ input, select, textarea {
 						text-align: center;
 						top: 0;
 						width: 64px;
-						right: 0;
+						left: 0;
 					}
 
 			body.header-visible #wrapper, body.header-visible #titleBar {
-				-moz-transform: translateX(-23em);
-				-webkit-transform: translateX(-23em);
-				-ms-transform: translateX(-23em);
-				transform: translateX(-23em);
+				-moz-transform: translateX(23em);
+				-webkit-transform: translateX(23em);
+				-ms-transform: translateX(23em);
+				transform: translateX(23em);
 			}
 
 			body.header-visible #header {
@@ -3149,11 +3170,11 @@ input, select, textarea {
 
 			#header {
 				width: 17em;
-				-moz-transform: translateX(17em);
-				-webkit-transform: translateX(17em);
-				-ms-transform: translateX(17em);
-				transform: translateX(17em);
-				right: 0;
+				-moz-transform: translateX(-17em);
+				-webkit-transform: translateX(-17em);
+				-ms-transform: translateX(-17em);
+				transform: translateX(-17em);
+				left: 0;
 			}
 
 				#header > header {
@@ -3213,11 +3234,15 @@ input, select, textarea {
 					width: 44px;
 				}
 
+			#titleBar .title {
+				padding: 0 64px;
+			}
+
 			body.header-visible #wrapper, body.header-visible #titleBar {
-				-moz-transform: translateX(-17em);
-				-webkit-transform: translateX(-17em);
-				-ms-transform: translateX(-17em);
-				transform: translateX(-17em);
+				-moz-transform: translateX(17em);
+				-webkit-transform: translateX(17em);
+				-ms-transform: translateX(17em);
+				transform: translateX(17em);
 			}
 
 	}
