@@ -28,6 +28,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="#bio" class="active">Bio</a></li>
+						<li><a href="#pubs" class="active">Publications</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -60,6 +61,16 @@
 								</div>
 							</section>
 
+							<section id="pubs">
+								<div class="container">
+									<header>
+			                            <h2>Publications</h2>
+			                        </header>
+
+			                        <div id="includeBib" class="pub"></div>
+			                    </div>
+							</section>
+
 					</div>
 
 				<!-- Footer -->
@@ -81,6 +92,12 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+	            $(function(){
+	              $("#includeBib").load("pubs.html");
+	            });
+	    	</script>
 
 	</body>
 </html>
