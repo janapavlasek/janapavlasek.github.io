@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 SCRIPT_DIR="$DIR/bibtex2html-1.99-linux"
 BIB_DIR="$DIR/../bib"
-WEB_DIR="$DIR/../web"
+WEB_DIR="$DIR/.."
 
 $SCRIPT_DIR/bibtex2html -s ieeetr --no-abstract --no-keywords --nodoc --nobibsource \
     --no-keys -nodoi -noeprint -linebreak -d -r \
@@ -25,4 +25,3 @@ sed -i 's/^\[//
 
 # Make my name highlighted.
 sed -i 's/J.&nbsp;Pavlasek/<span class="me">J.\&nbsp;Pavlasek<\/span>/' $WEB_DIR/pubs.html
-# sed -i 's/tmp/J.&nbsp;Pavlasek/' $WEB_DIR/pubs.html
