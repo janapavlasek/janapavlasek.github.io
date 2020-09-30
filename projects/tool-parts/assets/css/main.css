@@ -2126,6 +2126,14 @@ div.person a:hover {
     max-width: 70%;
 }
 
+a.paperlinks {
+	text-decoration: none;
+}
+
+a.paperlinks:hover {
+	color: #FFCB05;
+}
+
 .citation pre code {
   background-color: #f7f7f7;
   display: block;
