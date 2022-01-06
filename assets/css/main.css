@@ -1854,7 +1854,7 @@ input, select, textarea {
     .icon:before {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
-      font-family: FontAwesome;
+      font-family: 'Font Awesome 5 Free';
       font-style: normal;
       font-weight: normal;
       text-transform: none !important;
@@ -2083,7 +2083,7 @@ input, select, textarea {
       ul.feature-icons li:before {
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
-        font-family: FontAwesome;
+        font-family: 'Font Awesome 5 Free';
         font-style: normal;
         font-weight: normal;
         text-transform: none !important;
@@ -2758,7 +2758,7 @@ input, select, textarea {
           #titleBar .toggle:before {
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
-            font-family: FontAwesome;
+            font-family: 'Font Awesome 5 Free';
             font-style: normal;
             font-weight: normal;
             text-transform: none !important;
@@ -2770,6 +2770,7 @@ input, select, textarea {
             content: '\f0c9';
             display: block;
             font-size: 18px;
+            font-weight: 900;
             height: 44px;
             line-height: 44px;
             position: absolute;
