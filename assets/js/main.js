@@ -88,6 +88,7 @@
 						if ($section.length < 1)
 							return;
 
+					var timeout;
 					// Scrollex.
 						$section.scrollex({
 							mode: 'middle',
@@ -100,11 +101,13 @@
 
 							},
 							enter: function() {
-
-								// Activate section.
+								// Add a small timeout to stop the scroll from triggering twice.
+								clearTimeout(timeout);
+								timeout = setTimeout(function() {
+									// Activate section.
 									$section.removeClass('inactive');
 
-								// No locked links? Deactivate all links and activate this section's one.
+									// No locked links? Deactivate all links and activate this section's one.
 									if ($nav_a.filter('.active-locked').length == 0) {
 
 										$nav_a.removeClass('active');
@@ -112,9 +115,11 @@
 
 									}
 
-								// Otherwise, if this section's link is the one that's locked, unlock it.
+									// Otherwise, if this section's link is the one that's locked, unlock it.
 									else if ($this.hasClass('active-locked'))
 										$this.removeClass('active-locked');
+								}, 200);
+
 
 							}
 						});

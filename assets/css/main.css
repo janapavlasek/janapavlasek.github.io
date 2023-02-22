@@ -2424,7 +2424,7 @@ input, select, textarea {
       -webkit-flex-shrink: 0;
       -ms-flex-shrink: 0;
       flex-shrink: 0;
-      padding: 3em;
+      padding: 3em 3em 2em 3em;
     }
 
       #header > header .avatar {
@@ -2477,7 +2477,6 @@ input, select, textarea {
       }
 
         #header > nav ul li {
-          border-top: solid 2px #ffffff;
           display: block;
           padding: 0;
         }
@@ -2580,7 +2579,7 @@ input, select, textarea {
       }
 
         #header > header {
-          padding: 2em;
+          padding: 2em 2em 1em 2em;
         }
 
         #header > footer {
@@ -2876,7 +2875,7 @@ input, select, textarea {
       }
 
         #header > header {
-          padding: 2em;
+          padding: 2em 2em 1em 2em;
         }
 
           #header > header .avatar {
