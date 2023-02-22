@@ -88,7 +88,6 @@
 						if ($section.length < 1)
 							return;
 
-					var timeout;
 					// Scrollex.
 						$section.scrollex({
 							mode: 'middle',
@@ -101,24 +100,29 @@
 
 							},
 							enter: function() {
-								// Add a small timeout to stop the scroll from triggering twice.
-								clearTimeout(timeout);
-								timeout = setTimeout(function() {
-									// Activate section.
-									$section.removeClass('inactive');
+								var timeout;
 
-									// No locked links? Deactivate all links and activate this section's one.
-									if ($nav_a.filter('.active-locked').length == 0) {
+								// Activate section.
+								$section.removeClass('inactive');
 
-										$nav_a.removeClass('active');
-										$this.addClass('active');
+								// No locked links? Deactivate all links and activate this section's one.
+								if ($nav_a.filter('.active-locked').length == 0) {
 
-									}
+									$nav_a.removeClass('active');
+									$this.addClass('active');
 
-									// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
+								}
+
+								// Otherwise, if this section's link is the one that's locked, unlock it.
+								else if ($this.hasClass('active-locked')) {
+									// Add a timeout to stop other classes from activating before scroll is settled.
+									clearTimeout(timeout);
+									timeout = setTimeout(function() {
 										$this.removeClass('active-locked');
-								}, 200);
+									}, 1000);
+								}
+
+
 
 
 							}
