@@ -6,11 +6,12 @@
 -->
 <html>
     <head>
-        <title>Laboratory for Progress</title>
+        <title>Ready, Set, Plan! CoRL 2023</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="assets/css/project.css" />
+        <link rel="shortcut icon" type="image/png" href="/images/jp.png"/>
 
     </head>
     <body class="homepage is-preload">
@@ -68,15 +69,15 @@ We show that by considering all goal samples throughout the planning process, ou
                         </p>
 
                         <!-- Link to PDF. -->
-                        <!-- <p>
-                            <a href="https://arxiv.org/abs/2008.02881" class="paperlinks"><i class="far fa-file-pdf"></i> Read the Paper</a> &nbsp;&nbsp;
-                            <a href="https://youtu.be/D5mnlvZ3bG4" class="paperlinks"><i class="fas fa-chalkboard-teacher"></i> Watch the Talk</a>
-                        </p> -->
+                        <p>
+                            <!-- <a href="https://arxiv.org/abs/2008.02881" class="paperlinks"><i class="far fa-file-pdf"></i> Read the Paper</a> &nbsp;&nbsp; -->
+                            <a href="#cite"><i class="fas fa-quote-right"></i>&nbsp;&nbsp;Cite</a>
+                        </p>
 
 
                     </article>
 
-                    <!-- <article class="box post">
+                    <article class="box post">
                         <header>
                             <h2>Planar Navigation</h2>
                         </header>
@@ -84,10 +85,145 @@ We show that by considering all goal samples throughout the planning process, ou
                         <p>The goal set planner considers a set of goal samples as the planning objective. Our planner is better than heuristic baselines at maintaining modes of the trajectory distribution, leading to a higher likelihood that at least one feasible path to the goal region will be found.</p>
 
                         <p>In the examples below, the purple lines represent the trajectory distribution at each timestep. The red X's represent goal samples, and the orange contours represent the true user-defined goal distribution. Note that only the "Cross Entropy" oracle baseline has access to the true underlying distribution.</p>
-                    </article> -->
+
+                        <div class="row aln-center">
+                          <div class="col-4 col-4-large col-5-medium col-8-small project-author">
+                            <figure>
+                              <img src="images/exp/planar/closest_point_get_in_box_uni_0.gif" alt="" style="width:100%">
+                              <figcaption><b>Closest Point (Baseline)</b>:
+                                Selecting one single goal from the set of goal points can lead to a goal that is difficult or impossible to reach. (The selected goal is a red "x" in the bottom left corner of the box.)
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-4 col-4-large col-5-medium col-8-small project-author">
+                            <figure>
+                              <img src="images/exp/planar/cross_entropy_true_get_in_box_uni_0.gif" alt="" style="width:100%">
+                              <figcaption><b>Cross Entropy (Oracle Baseline)</b>:
+                                Using the true goal distribution density as a likelihood can lead to local minima in the trajectory estimate. Note that in some more complicated examples, the true distribution is not always available.
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-4 col-4-large col-5-medium col-8-small project-author">
+                            <figure>
+                              <img src="images/exp/planar/mmd_prior_get_in_box_uni_0.gif" alt="" style="width:100%">
+                              <figcaption><b>Goal Set Planner (Ours)</b>:
+                                The nature of the goal set planner encourages the terminal points in the trajectory to match the goal samples. This increases the chance that a successful path to the goal region is found.
+                              </figcaption>
+                            </figure>
+                          </div>
+                        </div>
+
+                        <h3 style="margin: 1em 0;">Terminal Losses</h3>
+
+                        <p>Multiple terminal losses can be used within the goal set planner formulation. We implement and analyse four different options, all of which consists of two-sample tests where both the trajectories and goal are represented implicitly in terms of samples. All losses examined are fully differentiable with respect to the trajectory.</p>
+
+                        <div class="row aln-center">
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_mmd.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_mmd.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot" onclick="carousel_mmd.currentSlide(1)"></span>
+                                <span class="dot" onclick="carousel_mmd.currentSlide(2)"></span>
+                                <span class="dot" onclick="carousel_mmd.currentSlide(3)"></span>
+                                <span class="dot" onclick="carousel_mmd.currentSlide(4)"></span>
+                                <span class="dot" onclick="carousel_mmd.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>Kernelized Maximum Mean Discrepancy (MMD)</h3>
+                            <p>A two-sample approximation of the Maximum Mean Discrepancy, from Gretton et al. (JMLR, 2012). </p>
+                          </div>
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_kl.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_kl.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot" onclick="carousel_kl.currentSlide(1)"></span>
+                                <span class="dot" onclick="carousel_kl.currentSlide(2)"></span>
+                                <span class="dot" onclick="carousel_kl.currentSlide(3)"></span>
+                                <span class="dot" onclick="carousel_kl.currentSlide(4)"></span>
+                                <span class="dot" onclick="carousel_kl.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>KL Divergence via. Density Ratio Estimation</h3>
+                            <p>A two-sample approximation of the KL divergence, where the density ratio is approximated by training a classifier on the sample points (Menon and Ong, ICML, 2016).</p>
+                          </div>
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_knn.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_knn.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot" onclick="carousel_knn.currentSlide(1)"></span>
+                                <span class="dot" onclick="carousel_knn.currentSlide(2)"></span>
+                                <span class="dot" onclick="carousel_knn.currentSlide(3)"></span>
+                                <span class="dot" onclick="carousel_knn.currentSlide(4)"></span>
+                                <span class="dot" onclick="carousel_knn.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>Smooth k-Nearest Neighbor</h3>
+                            <p>A smooth approximation to the k-Nearest Neighbor divergence, from Djolonga and Krause (2017).</p>
+                          </div>
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_energy.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_energy.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot" onclick="carousel_energy.currentSlide(1)"></span>
+                                <span class="dot" onclick="carousel_energy.currentSlide(2)"></span>
+                                <span class="dot" onclick="carousel_energy.currentSlide(3)"></span>
+                                <span class="dot" onclick="carousel_energy.currentSlide(4)"></span>
+                                <span class="dot" onclick="carousel_energy.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>Energy Statistic</h3>
+                            <p>The energy statistic defined by Székely and Rizzo (JSPI 2013).</p>
+                          </div>
+                        </div>
+
+                    </article>
 
                     <article class="box post">
-                        <header>
+                        <header id="cite">
                             <h2>Citation</h2>
                         </header>
 
@@ -121,6 +257,24 @@ We show that by considering all goal samples throughout the planning process, ou
             </section>
 
         </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/carousel.js"></script>
+        <script>
+          var carousel_mmd = new Carousel("slideshow-mmd", 12000);
+          var carousel_kl = new Carousel("slideshow-kl", 12000);
+          var carousel_knn = new Carousel("slideshow-knn", 12000);
+          var carousel_energy = new Carousel("slideshow-energy", 12000);
+
+            (function($) {
+
+                carousel_mmd.carousel(1);
+                carousel_kl.carousel(1);
+                carousel_knn.carousel(1);
+                carousel_energy.carousel(1);
+            })(jQuery);
+        </script>
 
     </body>
 </html>
