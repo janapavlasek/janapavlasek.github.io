@@ -223,6 +223,125 @@ We show that by considering all goal samples throughout the planning process, ou
                     </article>
 
                     <article class="box post">
+                      <header>
+                          <h2>Robotic Grasping</h2>
+                      </header>
+
+                      <p>Stable grasping is an example of a task for which the goal distribution is difficult to describe explicitly. Many popular approaches instead use data-driven techniques, in which grasp candidates are evaluated through simulation. We use valid goal samples from the Acronym dataset as a goal set and perform trajectory planning to the samples directly. In practice, we plan to offset pre-grasp poses, then switch to a point goal solver for the grasping action.</p>
+
+                      <div class="row aln-center">
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/mmd_grasp.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <h3>Goal Set Planning for Robotic Plan-to-Grasp (Ours)</h3>
+                          <p>Our planner considers a set of provided valid grasp points (green) as a goal. In this example, only a subset of the grasps are reachable. The goal set planner seeks to find a path to the goal samples while jointly optimizing for cost and collision avoidance. As such, the planner determines good goal regions on the fly.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/fail_pt_grasp.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <h3>Single Point Planner (Baseline)</h3>
+                          <p>
+                            The baseline selects the nearest goal point and performs performs point-based planning. In this case, the nearest point (blue) is not reachable in the environment, and results in a planning failure. Checking for reachability and collisions in the goal set is possible, but involves applying expensive heuristics prior to planning.</p>
+                        </div>
+                      </div>
+
+                      <h3 style="margin: 1em 0;">Qualitative Results</h3>
+
+                      <p>Below are qualitative results of successful grasps from our experiments on various objects. The grasp samples considered are shown in green. Only a portion (N=20) are shown for better visualization. A total of 100 valid grasps are considered as part of the goal set in practice. The goal set planner in these examples uses the Kernel MMD loss.</p>
+
+                      <div class="row aln-center">
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_box_mug.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Mug</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_fail_side_cereal.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Cereal Box</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_hard_nalgene.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Water Bottle</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_reach_bowl.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Bowl</p>
+                        </div>
+                      </div>
+
+                      <h3 style="margin: 1em 0;">Real Robot Demonstration</h3>
+
+                      <p>We execute our planner on a Franka Panda robot to demonstrate that our trajectories are transferable to a real platform. The trajectories are planned offline in Isaac Gym.</p>
+
+                      <div class="row aln-center">
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_sim_no_coll.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Trajectory generated in Isaac Gym.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_no_coll.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Execution on the Franka Panda.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_sim_wall.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Trajectory generated in Isaac Gym.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_wall.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Execution on the Franka Panda.</p>
+                        </div>
+                      </div>
+
+                    </article>
+
+                    <article class="box post">
                         <header id="cite">
                             <h2>Citation</h2>
                         </header>
