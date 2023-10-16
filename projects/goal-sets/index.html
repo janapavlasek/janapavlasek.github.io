@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+    Dopetrope by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Laboratory for Progress</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    </head>
+    <body class="homepage is-preload">
+        <div id="page-wrapper">
+
+            <!-- <section id="header-project">
+                <h1><a href="https://progress.eecs.umich.edu/">Laboratory for Progress</a></h1>
+                <p>Perceptive Robotics and Grounded Reasoning Systems</a></p>
+            </section> -->
+
+            <section id="main">
+                <div class="container">
+
+                    <!-- Content -->
+                    <article class="box post project">
+                        <!-- TITLE -->
+                        <header>
+                            <h2>Ready, Set, Plan! Planning to Goal Sets Using Generalized Bayesian Inference</h2>
+                        </header>
+
+                        <!-- AUTHORS -->
+                        <div class="row aln-center project-authors">
+                            <div class="col-3 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="http://janapavlasek.com/">Jana Pavlasek</a></h3>
+                                <p>University of Michigan</p>
+                            </div>
+                            <div class="col-3 col-4-large col-4-medium col-6-small project-author">
+                                <h3>Stanley Lewis</h3>
+                                <p>University of Michigan</p>
+                            </div>
+                            <div class="col-3 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="https://balakumar-s.github.io/">Balakumar Sundaralingam</a></h3>
+                                <p>NVIDIA</p>
+                            </div>
+                            <div class="col-3 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="https://fabioramos.github.io/">Fabio Ramos</a></h3>
+                                <p>NVIDIA<br/>University of Sydney</p>
+                            </div>
+                            <div class="col-3 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="https://robot-learning.cs.utah.edu/thermans">Tucker Hermans</a></h3>
+                                <p>NVIDIA<br/>University of Utah</p>
+                            </div>
+                        </div>
+
+                        <!-- Path to a pitch image. -->
+                        <div class="image pitch centered"><img src="images/goal-sets-pitch.jpg" alt="" /></div>
+
+                        <p>
+                            Many robotic tasks can have multiple and diverse solutions and, as such, are naturally expressed as goal sets. Examples include navigating to a room, finding a feasible placement location for an object, or opening a drawer enough to reach inside.
+Using a goal set as a planning objective requires that a model for the objective be explicitly given by the user. However, some goals are intractable to model, leading to uncertainty over the goal (e.g. stable grasping of an object).
+In this work, we propose a technique for planning directly to a set of sampled goal configurations. We formulate a planning as inference problem with a novel goal likelihood evaluated against the goal samples.
+To handle the intractable goal likelihood, we employ generalized Bayesian inference to approximate the trajectory distribution.
+The result is a fully differentiable cost which generalizes across a diverse range of goal set objectives for which samples can be obtained.
+We show that by considering all goal samples throughout the planning process, our method reliably finds plans for manipulation and navigation problems where heuristic approaches fail.
+                        </p>
+
+                        <!-- Link to PDF. -->
+                        <!-- <p>
+                            <a href="https://arxiv.org/abs/2008.02881" class="paperlinks"><i class="far fa-file-pdf"></i> Read the Paper</a> &nbsp;&nbsp;
+                            <a href="https://youtu.be/D5mnlvZ3bG4" class="paperlinks"><i class="fas fa-chalkboard-teacher"></i> Watch the Talk</a>
+                        </p> -->
+
+
+                    </article>
+
+                    <!-- <article class="box post">
+                        <header>
+                            <h2>Planar Navigation</h2>
+                        </header>
+
+                        <p>The goal set planner considers a set of goal samples as the planning objective. Our planner is better than heuristic baselines at maintaining modes of the trajectory distribution, leading to a higher likelihood that at least one feasible path to the goal region will be found.</p>
+
+                        <p>In the examples below, the purple lines represent the trajectory distribution at each timestep. The red X's represent goal samples, and the orange contours represent the true user-defined goal distribution. Note that only the "Cross Entropy" oracle baseline has access to the true underlying distribution.</p>
+                    </article> -->
+
+                    <article class="box post">
+                        <header>
+                            <h2>Citation</h2>
+                        </header>
+
+                        <div class="citation">
+
+<pre><code>@inproceedings{pavlasek2023sets,
+  author = {Pavlasek, Jana and Lewis, Stanley and Sundaralingam, Balakumar and Ramos, Fabio and Hermans, Tucker},
+  title = {Ready, Set, Plan! Planning to Goal Sets Using Generalized Bayesian Inference},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  year = {2023}
+}</code></pre>
+                        </div>
+                    </article>
+
+
+
+
+                </div>
+            </section>
+
+            <section id="footer">
+
+                <!-- Copyright -->
+                <div id="copyright">
+                    <ul class="links">
+                        <li>&copy; 2023. All rights reserved.</li><li>Design: Dopetrope by
+                    <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </div>
+
+    </body>
+</html>
