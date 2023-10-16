@@ -342,6 +342,23 @@ We show that by considering all goal samples throughout the planning process, ou
                     </article>
 
                     <article class="box post">
+                      <header>
+                          <h2>Placement</h2>
+                      </header>
+
+                      <p>The goal set planner can handle multi-modal goal regions and adapt to changing environments where a portion of the goal region becomes unavailable. We demonstrate this behavior through a table setting task, where the robot must sequentially place mugs on a table using demonstrated goal locations.</p>
+
+                      <p>The goal samples are sampled from three uniform distributions (green). We use the MMD terminal cost. As mugs are added, certain goal points are no longer reachable. The trajectory distribution (red lines) converges to modes which terminate in reachable portions of the table, without recomputing the goal set during execution.</p>
+
+                      <div class="image centered" style="max-width: 500px;">
+                        <video controls>
+                          <source src="images/exp/placement/placement_1.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </article>
+
+                    <article class="box post">
                         <header id="cite">
                             <h2>Citation</h2>
                         </header>
