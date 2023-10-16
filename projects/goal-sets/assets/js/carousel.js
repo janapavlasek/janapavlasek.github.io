@@ -5,10 +5,11 @@
 */
 
 class Carousel {
-  constructor(div_id = "slideshow", switchTimeout = 5000) {
+  constructor(div_id = "slideshow", dot_id = "dot", switchTimeout = 5000) {
     this.slideIndex = 1;
     this.timeout = null;
     this.div_id = div_id;
+    this.dot_id = dot_id;
 
     this.switchTimeout = switchTimeout;
   }
@@ -30,7 +31,7 @@ class Carousel {
   carousel(n) {
     var i;
     var x = document.getElementsByClassName(this.div_id);
-    var dots = document.getElementsByClassName("dot");
+    var dots = document.getElementsByClassName(this.dot_id);
     if (x.length === 0) {
     	return;
     }

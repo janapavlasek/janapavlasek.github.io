@@ -70,7 +70,7 @@ We show that by considering all goal samples throughout the planning process, ou
 
                         <!-- Link to PDF. -->
                         <p>
-                            <!-- <a href="https://arxiv.org/abs/2008.02881" class="paperlinks"><i class="far fa-file-pdf"></i> Read the Paper</a> &nbsp;&nbsp; -->
+                            <a href="https://openreview.net/forum?id=5JMGq83yf1N" class="paperlinks"><i class="far fa-file-pdf"></i> Read the Paper</a> &nbsp;&nbsp;
                             <a href="#cite"><i class="fas fa-quote-right"></i>&nbsp;&nbsp;Cite</a>
                         </p>
 
@@ -133,11 +133,11 @@ We show that by considering all goal samples throughout the planning process, ou
 
                               <!-- The dots/circles -->
                               <div style="text-align:center">
-                                <span class="dot" onclick="carousel_mmd.currentSlide(1)"></span>
-                                <span class="dot" onclick="carousel_mmd.currentSlide(2)"></span>
-                                <span class="dot" onclick="carousel_mmd.currentSlide(3)"></span>
-                                <span class="dot" onclick="carousel_mmd.currentSlide(4)"></span>
-                                <span class="dot" onclick="carousel_mmd.currentSlide(5)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(1)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(2)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(3)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(4)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(5)"></span>
                               </div>
                             </div>
                             <h3>Kernelized Maximum Mean Discrepancy (MMD)</h3>
@@ -158,11 +158,11 @@ We show that by considering all goal samples throughout the planning process, ou
 
                               <!-- The dots/circles -->
                               <div style="text-align:center">
-                                <span class="dot" onclick="carousel_kl.currentSlide(1)"></span>
-                                <span class="dot" onclick="carousel_kl.currentSlide(2)"></span>
-                                <span class="dot" onclick="carousel_kl.currentSlide(3)"></span>
-                                <span class="dot" onclick="carousel_kl.currentSlide(4)"></span>
-                                <span class="dot" onclick="carousel_kl.currentSlide(5)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(1)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(2)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(3)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(4)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(5)"></span>
                               </div>
                             </div>
                             <h3>KL Divergence via. Density Ratio Estimation</h3>
@@ -183,11 +183,11 @@ We show that by considering all goal samples throughout the planning process, ou
 
                               <!-- The dots/circles -->
                               <div style="text-align:center">
-                                <span class="dot" onclick="carousel_knn.currentSlide(1)"></span>
-                                <span class="dot" onclick="carousel_knn.currentSlide(2)"></span>
-                                <span class="dot" onclick="carousel_knn.currentSlide(3)"></span>
-                                <span class="dot" onclick="carousel_knn.currentSlide(4)"></span>
-                                <span class="dot" onclick="carousel_knn.currentSlide(5)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(1)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(2)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(3)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(4)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(5)"></span>
                               </div>
                             </div>
                             <h3>Smooth k-Nearest Neighbor</h3>
@@ -208,11 +208,11 @@ We show that by considering all goal samples throughout the planning process, ou
 
                               <!-- The dots/circles -->
                               <div style="text-align:center">
-                                <span class="dot" onclick="carousel_energy.currentSlide(1)"></span>
-                                <span class="dot" onclick="carousel_energy.currentSlide(2)"></span>
-                                <span class="dot" onclick="carousel_energy.currentSlide(3)"></span>
-                                <span class="dot" onclick="carousel_energy.currentSlide(4)"></span>
-                                <span class="dot" onclick="carousel_energy.currentSlide(5)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(1)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(2)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(3)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(4)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(5)"></span>
                               </div>
                             </div>
                             <h3>Energy Statistic</h3>
@@ -262,10 +262,10 @@ We show that by considering all goal samples throughout the planning process, ou
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/carousel.js"></script>
         <script>
-          var carousel_mmd = new Carousel("slideshow-mmd", 12000);
-          var carousel_kl = new Carousel("slideshow-kl", 12000);
-          var carousel_knn = new Carousel("slideshow-knn", 12000);
-          var carousel_energy = new Carousel("slideshow-energy", 12000);
+          var carousel_mmd = new Carousel("slideshow-mmd", "dot-mmd", 12000);
+          var carousel_kl = new Carousel("slideshow-kl", "dot-kl", 12000);
+          var carousel_knn = new Carousel("slideshow-knn", "dot-knn", 12000);
+          var carousel_energy = new Carousel("slideshow-energy", "dot-energy", 12000);
 
             (function($) {
 
