@@ -160,6 +160,7 @@ input, select, textarea {
 
 		a:hover {
 			text-decoration: none;
+			color: #D7394F;
 		}
 
 	br.clear {
@@ -2169,7 +2170,7 @@ li:hover a {
 		text-decoration: none;
 	}
 	.project > .paperlinks a:hover {
-		color: #5d5d5d;
+		color: #D7394F;
 	}
 
 .project-authors {
