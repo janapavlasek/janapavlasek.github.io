@@ -2071,9 +2071,21 @@ input, select, textarea {
 
 /* Feature Icons */
 
+  span.icon {
+    background: #D7394F;
+    border-radius: 100%;
+    color: #ffffff;
+    display: block;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    width: 2.5em;
+  }
+
   ul.feature-icons {
     list-style: none;
     padding-left: 0;
+    margin-left: 0;
   }
 
     ul.feature-icons li {
@@ -2086,28 +2098,29 @@ input, select, textarea {
       width: 48%;
     }
 
-      ul.feature-icons li:before {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-family: 'Font Awesome 5 Free';
-        font-style: normal;
-        font-weight: normal;
-        text-transform: none !important;
-      }
+    ul.feature-icons.full-width li {
+      width: 100%;
+    }
 
-      ul.feature-icons li:before {
-        background: #D7394F;
-        border-radius: 100%;
-        color: #ffffff;
-        display: block;
-        height: 2.5em;
-        left: 0;
-        line-height: 2.5em;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        width: 2.5em;
-      }
+    ul.feature-icons li.icon span.fa-li {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-family: 'Font Awesome 5 Free';
+      font-style: normal;
+      font-weight: normal;
+      text-transform: none !important;
+      background: #D7394F;
+      border-radius: 100%;
+      color: #ffffff;
+      display: block;
+      height: 2.5em;
+      left: 0;
+      line-height: 2.5em;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 2.5em;
+    }
 
 /* Icons */
 
@@ -2152,8 +2165,16 @@ input, select, textarea {
         background-color: #fafafa;
       }
 
+      table.no-alt tbody tr {
+        background-color: inherit;
+      }
+
     table td {
       padding: 0.75em 0.75em;
+    }
+
+    table.icon-list td {
+      vertical-align: middle;
     }
 
     table th {
