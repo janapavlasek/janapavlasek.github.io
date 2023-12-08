@@ -7,8 +7,10 @@ WEB_DIR="$DIR/.."
 
 $SCRIPT_DIR/bibtex2html -s unsrt --no-abstract --no-keywords --nodoc --nobibsource \
     --no-keys -nodoi -noeprint -linebreak -d -r \
-    -nf webpage ' <i class="fa fa-link"></i> Website ' -nf talk ' <i class="fas fa-chalkboard-teacher"></i> Talk  ' \
-    -nf video ' <i class="fa fa-play"></i> Video  ' -nf url '<i class="far fa-file-pdf"></i> PDF  ' \
+    -nf webpage ' <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website ' \
+    -nf talk ' <i class="fa-solid fa-chalkboard-teacher"></i>&nbsp;&nbsp;Talk  ' \
+    -nf video ' <i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video  ' \
+    -nf url '<i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;PDF  ' \
     --output $WEB_DIR/pubs $BIB_DIR/pubs.bib
 
 echo
