@@ -1763,14 +1763,6 @@ input, select, textarea {
 
     }
 
-    @media screen and (max-width: 480px) {
-
-      .container {
-        max-width: calc(100% - 3.375em);
-      }
-
-    }
-
 /* Section/Article */
 
   section.special, article.special {
@@ -2711,9 +2703,9 @@ input, select, textarea {
 
     /* Basic */
 
-      html, body {
+      /* html, body {
         overflow-x: hidden;
-      }
+      } */
 
       body, input, select, textarea {
         font-size: 12pt;
@@ -2735,7 +2727,11 @@ input, select, textarea {
 
     /* Header */
 
-      #header {
+    #header > nav ul {
+      margin-right: 1em;
+    }
+
+      /* #header {
         -moz-backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
@@ -2756,20 +2752,40 @@ input, select, textarea {
         -ms-transform: translateX(-23em);
         transform: translateX(-23em);
         left: 0;
-      }
+      } */
 
-        #header > footer {
+        /* #header > footer {
           bottom: auto;
           left: auto;
           margin: 0.5em 0 0 0;
           position: relative;
           right: auto;
           top: auto;
+        } */
+
+      #main {
+        /* width: 48em; */
+        max-width: calc(100% - 200px);
+        margin: 0 0 0 200px;
+        /* position: absolute; */
+      }
+
+        #main > section > .popout {
+          width: 200px;
+          /* position: absolute; */
+          left: -200px;
+          padding-left: 1em;
+          /* top: 0; */
+          /* padding-top: 2em; */
         }
 
     /* Wrapper */
 
-      #wrapper {
+    #wrapper {
+      padding-top: 55px;
+    }
+
+      /* #wrapper {
         -moz-backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
@@ -2778,12 +2794,12 @@ input, select, textarea {
         -webkit-transition: -webkit-transform 0.5s ease;
         -ms-transition: -ms-transform 0.5s ease;
         transition: transform 0.5s ease;
-        padding: 44px 0 1px 0;
-      }
+        padding: 56px 0 1px 0;
+      } */
 
     /* Header Panel */
 
-      #titleBar {
+      /* #titleBar {
         -moz-backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
@@ -2868,7 +2884,7 @@ input, select, textarea {
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
         transform: translateX(0);
-      }
+      } */
 
   }
 
@@ -2882,9 +2898,9 @@ input, select, textarea {
         font-size: 12pt;
       }
 
-      h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+      /* h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
         display: none;
-      }
+      } */
 
       h2 {
         font-size: 1.75em;
@@ -2914,9 +2930,9 @@ input, select, textarea {
 
     /* Section/Article */
 
-      header br {
+      /* header br {
         display: none;
-      }
+      } */
 
       header.major h2 {
         font-size: 2.5em;
@@ -2942,43 +2958,73 @@ input, select, textarea {
 
     /* Header */
 
-      #header {
-        /* width: 17em; */
+      /* #header {
+        width: 17em;
         height: 200px;
         -moz-transform: translateX(-17em);
         -webkit-transform: translateX(-17em);
         -ms-transform: translateX(-17em);
         transform: translateX(-17em);
         left: 0;
-      }
+      } */
 
-        #header > header {
+        /* #header > header {
           padding: 2em 2em 1em 2em;
-        }
+        } */
 
-          #header > header .avatar {
+          /* #header > header .avatar {
             margin: 0 auto 1.6875em auto;
             width: 8em;
-          }
+          } */
 
-          #header > header h1 {
+          /* #header > header h1 {
             font-size: 1.5em;
-          }
+          } */
 
-          #header > header p {
+          /* #header > header p {
             margin: 1em 0 0 0;
-          }
+          } */
 
-        #header > footer {
+        /* #header > footer {
           padding: 1.5em;
-        }
+        } */
 
     /* Main */
 
+    #main {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      /* position: absolute; */
+    }
+
+      #main > section > .popout {
+        width: 200px;
+        /* position: absolute; */
+        left: 0px;
+        position: relative;
+        display: inline-block;
+        /* padding-left: 1em; */
+        /* top: 0; */
+        /* padding-top: 2em; */
+      }
+
+      #main > section#bio > .container {
+        max-width: calc(100% - 210px);
+        display: inline-block;
+        vertical-align: top;
+      }
+
+  /* Wrapper */
+
+  #wrapper {
+    padding-top: 55px;
+  }
+
       #main > section > .container {
-        padding: 2em 0 0 0;
+        /* padding: 2em 0 0 0; */
         /* margin: 0 0 0 2em; */
-        max-width: calc(100% - 4em);
+        /* max-width: calc(100% - 4em); */
       }
 
     /* Footer */
@@ -3001,26 +3047,26 @@ input, select, textarea {
 
     /* Header Panel */
 
-      #titleBar .toggle {
+      /* #titleBar .toggle {
         height: 4em;
         width: 6em;
-      }
+      } */
 
-        #titleBar .toggle:before {
+        /* #titleBar .toggle:before {
           font-size: 14px;
           width: 44px;
-        }
+        } */
 
-      #titleBar .title {
+      /* #titleBar .title {
         padding: 0 64px;
-      }
+      } */
 
-      body.header-visible #wrapper, body.header-visible #titleBar {
+      /* body.header-visible #wrapper, body.header-visible #titleBar {
         -moz-transform: translateX(17em);
         -webkit-transform: translateX(17em);
         -ms-transform: translateX(17em);
         transform: translateX(17em);
-      }
+      } */
 
   }
 
@@ -3036,6 +3082,41 @@ input, select, textarea {
 
       body, input, select, textarea {
         font-size: 12pt;
+      }
+
+      #header {
+        flex-direction: column;
+      }
+
+        #header > header {
+          padding: 1em 2em;
+        }
+
+      #wrapper {
+        padding-top: 112px;
+      }
+
+      .image.avatar {
+        width: 50%;
+      }
+
+      #main > section#bio > .container {
+        max-width: 100%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      #main > section > .popout {
+        width: 100%;
+        padding: 1em 2em;
+      }
+
+      #header > nav ul {
+        margin: 0;
+      }
+
+      #header > nav ul li a {
+        padding: 0.5em 1.5em;
       }
 
     /* List */
