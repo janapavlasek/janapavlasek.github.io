@@ -30,7 +30,8 @@
     <!-- Header -->
       <section id="header">
         <header>
-          <h1 id="logo"><a href="#">Jana Pavlasek</a></h1>
+          <span class="logo"><img src="/images/jp-inv.png" alt="" /></span>
+          <!-- <h1 id="logo"><a href="#">Jana Pavlasek</a></h1> -->
         </header>
         <!-- <header>
           <span class="image avatar"><img src="images/headshot_square.jpg" alt="" /></span>
@@ -50,6 +51,7 @@
             <li><a href="#bio" class="active">Bio</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#teaching">Teaching</a></li>
+            <li><a href="/pubs.html">Publications</a></li>
           </ul>
         </nav>
         <!-- <footer>
@@ -127,38 +129,48 @@
                   <p>Here are some of my recent, representative publications and projects. For all my papers, see my <a href="#pubs">publications section</a> or my&nbsp;&nbsp;<a href="https://scholar.google.ca/citations?user=yJS-u7IAAAAJ&hl=en"><i class="fa-brands fa-google-scholar"></i>&nbsp;&nbsp;Google Scholar</a>.</p>
                   <div class="features">
                       <article>
-                          <a href="#" class="image"><img src="images/auv.jpg" alt="" /></a>
+                          <a href="https://progress.eecs.umich.edu/projects/stein-bp" class="image"><img src="images/projects/multi_robot_svbp.png" alt="" /></a>
                           <div class="inner">
                               <h4>Distributed Inference for Multi-Robot Coordination</h4>
-                              <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+                              <p>How can we capture the complexity of multi-robot coordination? We propose Stein Variational Belief Propagation, an algorithm for performing inference on graphs. Then, we use it to infer trajectories for decentralized multi-robot control.</p>
+                              <a href="https://openreview.net/pdf?id=fDsqkXx1Ild"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;PDF  </a>&nbsp;&nbsp;
+                              <a href="https://progress.eecs.umich.edu/projects/stein-bp"> <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website </a>
                           </div>
                       </article>
                       <article>
-                          <a href="#" class="image"><img src="images/auv.jpg" alt="" /></a>
+                          <a href="/projects/goal-sets" class="image"><img src="images/projects/goal-sets.jpg" alt="" /></a>
                           <div class="inner">
                               <h4>Planning to Uncertain Goals</h4>
-                              <p>How can we plan to arbitrary goal regions?</p>
+                              <p>How can we plan to arbitrary goal regions? We looked out how to plan to goals that are hard to model (e.g. stable grasping) by using valid goal samples directly as a planning objective.</p>
+                              <a href="https://proceedings.mlr.press/v229/pavlasek23a.html"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;PDF  </a>&nbsp;&nbsp;
+                              <a href="https://youtu.be/0fYLgBCSw9U"> <i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video  </a>&nbsp;&nbsp;
+                              <a href="/projects/goal-sets"> <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website </a>
                           </div>
                       </article>
                       <article>
-                          <a href="#" class="image"><img src="images/auv.jpg" alt="" /></a>
+                          <a href="https://progress.eecs.umich.edu/projects/tool-parts/" class="image"><img src="images/projects/tool-parts.jpg" alt="" /></a>
                           <div class="inner">
                               <h4>Articulated Object Pose Estimation by Parts</h4>
-                              <p>In heavy clutter, pose estimation is challenging.</p>
+                              <p>In heavy clutter, pose estimation is challenging. We model objects as graphs of their parts and fuse known geometric priors with a learned likelihood to get robust pose estimates.</p>
+                              <a href="https://arxiv.org/abs/2008.02881"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;PDF  </a>&nbsp;&nbsp;
+                              <a href="https://youtu.be/qwIuUwkwykI"> <i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video  </a>&nbsp;&nbsp;
+                              <a href="https://youtu.be/D5mnlvZ3bG4"> <i class="fa-solid fa-chalkboard-teacher"></i>&nbsp;&nbsp;Talk  </a>&nbsp;&nbsp;
+                              <a href="https://progress.eecs.umich.edu/projects/tool-parts/"> <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website </a>
                           </div>
                       </article>
                       <article>
-                        <a href="#" class="image"><img src="images/auv.jpg" alt="" /></a>
+                        <a href="https://hellorob.org" class="image"><img src="images/projects/dtc_bootcamp_mbot.jpg" alt="" /></a>
                         <div class="inner">
-                            <h4>Distributed Teaching Collaboratives</h4>
-                            <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+                            <h4>Distributed Teaching Collaboratives for Robotics</h4>
+                            <p>How can we scale robotics and AI education? In a Distributed Teaching Collaborative, instructors at different universities share course material and teaching resources by offering courses in parallel.</p>
+                            <a href="https://hellorob.org"> <i class="fa-solid fa-robot"></i>&nbsp;&nbsp;Learn about the HelloRob course</a>
                         </div>
                     </article>
                   </div>
 
-                  <hr />
+                  <!-- <hr /> -->
 
-                  <div id="includeBib" class="pub"></div>
+                  <!-- <div id="includeBib" class="pub"></div> -->
                 </div>
               </section>
 
@@ -271,9 +283,9 @@
       <script src="assets/js/main.js"></script>
 
       <script>
-        $(function(){
-          $("#includeBib").load("pubs_list.html");
-        });
+        // $(function(){
+        //   $("#includeBib").load("pubs_list.html");
+        // });
       </script>
 
   </body>
