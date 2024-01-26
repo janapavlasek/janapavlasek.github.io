@@ -135,6 +135,10 @@ input, select, textarea {
     margin: 0 0 2.25em 0;
   }
 
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     color: #777;
     font-weight: 700;
@@ -1718,15 +1722,12 @@ input, select, textarea {
 
 /* Container */
 
-  /*.container {
-    margin: 0 0 0 6em;
-    max-width: calc(100% - 12em);
-      width: 45em;
-  }*/
   .container {
     margin: 0 auto;
-    max-width: calc(100% - 4.5em);
-    width: 45em;
+    /* margin: auto; */
+    display: block;
+    /* max-width: calc(100% - 4.5em); */
+    /* width: 45em; */
   }
 
 
@@ -2411,23 +2412,26 @@ input, select, textarea {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
-    -moz-flex-direction: column;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -moz-justify-content: space-between;
     -webkit-justify-content: space-between;
     -ms-justify-content: space-between;
     justify-content: space-between;
     background: #075E66;
     color: #ffffff;
-    height: 100%;
+    /* height: 100%; */
     overflow-y: auto;
     position: fixed;
     text-align: center;
+    align-items: center;
     top: 0;
-    width: 23em;
+    width: 100%;
+    /* height: 200px; */
     left: 0;
+    z-index: 1;  /* Force to stay at the front of other content. */
   }
 
     #header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -2455,7 +2459,8 @@ input, select, textarea {
       -webkit-flex-shrink: 0;
       -ms-flex-shrink: 0;
       flex-shrink: 0;
-      padding: 3em 3em 2em 3em;
+      padding: 0 2em;
+      /* padding: 3em 3em 2em 3em; */
     }
 
       #header > header .avatar {
@@ -2500,16 +2505,19 @@ input, select, textarea {
       -webkit-flex-grow: 1;
       -ms-flex-grow: 1;
       flex-grow: 1;
+      text-align: right;
+      margin: auto 0;
     }
 
       #header > nav ul {
         list-style: none;
-        margin: 0;
+        /* margin: 0; */
+        margin: 0 4em 0 0;
         padding: 0;
       }
 
         #header > nav ul li {
-          display: block;
+          display: inline-block;
           padding: 0;
         }
 
@@ -2521,7 +2529,7 @@ input, select, textarea {
             border: 0;
             color: #ffffff !important;
             display: block;
-            padding: 0.85em 0;
+            padding: 0.85em 2em;
             text-decoration: none;
           }
 
@@ -2538,25 +2546,45 @@ input, select, textarea {
 
   #wrapper {
     background: #fff;
-    padding-left: 23em;
+    padding-top: 75px;
+    /* padding-left: 23em; */
   }
 
 /* Main */
+
+  #main {
+    width: 48em;
+    max-width: calc(100% - 600px);
+    margin: 0 auto;
+    position: relative;
+  }
 
   #main > section {
     border-top: solid 6px #f4f4f4;
   }
 
     #main > section > .container {
-      padding: 6em 0 4em 0;
-      margin: 0 0 0 6em;
-      max-width: calc(100% - 12em);
-        width: 45em;
+      padding: 2em;
+      /* margin: 0 0 0 6em; */
+      /* max-width: calc(100% - 12em); */
+        /* width: 45em; */
     }
 
     #main > section:first-child {
       border-top: 0;
     }
+
+/* Popout */
+
+#main > section > .popout {
+  width: 300px;
+  position: absolute;
+  left: -300px; /* This moves the div to the left of the main content */
+  top: 0;
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 2em 0 0 2em;
+}
 
 /* Footer */
 
@@ -2607,11 +2635,12 @@ input, select, textarea {
     /* Header */
 
       #header {
-        width: 21em;
+        /* width: 21em; */
+        /* height: 200px; */
       }
 
         #header > header {
-          padding: 2em 2em 1em 2em;
+          padding: 0 2em;
         }
 
         #header > footer {
@@ -2621,13 +2650,13 @@ input, select, textarea {
     /* Wrapper */
 
       #wrapper {
-        padding-left: 21em;
+        padding-top: 60px;
       }
 
     /* Main */
 
       #main > section > .container {
-        padding: 4em 0 2em 0;
+        padding: 2em;
       }
 
   }
@@ -2645,13 +2674,29 @@ input, select, textarea {
     /* Header */
 
       #header {
-        width: 20em;
+        /* width: 20em; */
+        /* height: 200px; */
       }
 
     /* Wrapper */
 
       #wrapper {
-        padding-left: 20em;
+        padding-top: 52px;
+      }
+
+      #main {
+        width: 48em;
+        max-width: calc(100% - 300px);
+        margin: 0 0 0 250px;
+        /* position: absolute; */
+      }
+
+      #main > section > .popout {
+        width: 250px;
+        /* position: absolute; */
+        left: -250px;
+        /* top: 0; */
+        /* padding-top: 2em; */
       }
 
   }
@@ -2898,7 +2943,8 @@ input, select, textarea {
     /* Header */
 
       #header {
-        width: 17em;
+        /* width: 17em; */
+        height: 200px;
         -moz-transform: translateX(-17em);
         -webkit-transform: translateX(-17em);
         -ms-transform: translateX(-17em);
@@ -2931,7 +2977,7 @@ input, select, textarea {
 
       #main > section > .container {
         padding: 2em 0 0 0;
-        margin: 0 0 0 2em;
+        /* margin: 0 0 0 2em; */
         max-width: calc(100% - 4em);
       }
 
