@@ -132,7 +132,7 @@ input, select, textarea {
   }
 
   p {
-    margin: 0 0 2.25em 0;
+    margin: 0 0 1.5em 0;
   }
 
   p:last-child {
@@ -1830,6 +1830,10 @@ input, select, textarea {
 
 /* Pub */
 
+#includeBib {
+  padding-top: 1em;
+}
+
 .pub a {
   text-decoration: none;
   border-bottom: none;
@@ -2007,6 +2011,7 @@ input, select, textarea {
     .image.avatar {
       border-radius: 100%;
       overflow: hidden;
+      padding-bottom: 0.5em;
     }
 
       .image.avatar img {
@@ -2366,8 +2371,8 @@ input, select, textarea {
 
   .features article {
     border-top: solid 3px #f4f4f4;
-    margin-bottom: 2.25em;
-    padding-top: 2.25em;
+    margin-bottom: 1.5em;
+    padding-top: 1.5em;
   }
 
     .features article:first-child {
@@ -2375,11 +2380,15 @@ input, select, textarea {
       padding-top: 0;
     }
 
+    .features article:last-child {
+      margin-bottom: 0;
+    }
+
     .features article .image {
       display: inline-block;
-      padding-right: 2.5em;
+      padding-right: 1.5em;
       vertical-align: middle;
-      width: 48%;
+      width: 45%;
     }
 
       .features article .image img {
@@ -2461,8 +2470,12 @@ input, select, textarea {
         width: 10em;
       }
 
-      #header > header > span.logo > img {
-        width: 50px;
+      #header > header > span.logo > a {
+        border-bottom: none;
+      }
+
+      #header > header > span.logo > a > img {
+        width: 40px;
         padding: 10px 0;
         display: block;
       }
@@ -2684,7 +2697,7 @@ input, select, textarea {
     /* Wrapper */
 
       #wrapper {
-        padding-top: 52px;
+        padding-top: 60px;
       }
 
       #main {
@@ -2729,6 +2742,10 @@ input, select, textarea {
       }
 
     /* Header */
+
+    .popout > header > h1 {
+      font-size: 20pt;
+  }
 
     #header > nav ul {
       margin-right: 1em;
@@ -2888,12 +2905,8 @@ input, select, textarea {
         flex-direction: column;
       }
 
-        #header > header {
-          padding: 1em 2em;
-        }
-
       #wrapper {
-        padding-top: 112px;
+        padding-top: 104px;
       }
 
       .image.avatar {
@@ -2908,7 +2921,7 @@ input, select, textarea {
 
       #main > section > .popout {
         width: 100%;
-        padding: 1em 2em;
+        padding: 1em 2em 0 2em;
       }
 
       #header > nav ul {
