@@ -10,7 +10,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/academicons.min.css"/>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="shortcut icon" type="image/png" href="images/jp.png"/>
 
@@ -30,33 +29,15 @@
     <!-- Header -->
       <section id="header">
         <header>
-          <span class="image avatar"><img src="images/headshot_square.jpg" alt="" /></span>
-          <h1 id="logo"><a href="#">Jana Pavlasek</a></h1>
-          <p>
-            Robotics PhD Candidate
-            @ University of Michigan
-          </p>
-          <p style="font-size: 85%;">
-            <i>she / her</i><br/>
-            <i>(Pronounced: Yana Pav-LA-sek)</i><br/>
-            <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;pavlasek [at] umich [dot] edu
-          </p>
+          <span class="logo"><a href="/"><img src="/images/jp-inv.png" alt="" /></a></span>
         </header>
         <nav id="nav">
           <ul>
-            <li><a href="#bio" class="active">Bio</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/pubs.html">Publications</a></li>
+            <li><a href="/files/cv.pdf">CV</a></li>
           </ul>
         </nav>
-        <footer>
-          <ul class="icons">
-            <li><a href="https://scholar.google.ca/citations?user=yJS-u7IAAAAJ&hl=en"><i class="fa-brands fa-google-scholar"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/janapavlasek/"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="https://github.com/janapavlasek"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="https://twitter.com/janapavlasek"><i class="fa-brands fa-twitter"></i></a></li>
-          </ul>
-        </footer>
       </section>
 
     <!-- Wrapper -->
@@ -70,6 +51,27 @@
                 <!-- <div class="image main" data-position="center">
                   <img src="images/auv.jpg" alt="" />
                 </div> -->
+                <div class="popout">
+                  <header>
+                    <span class="image avatar"><img src="images/headshot_square.jpg" alt="" /></span>
+                    <h1><a href="#">Jana Pavlasek</a></h1>
+                    <p>
+                      Robotics PhD Candidate
+                      @ University of Michigan
+                    </p>
+                    <p style="font-size: 80%;">
+                      <i>she / her</i><br/>
+                      <i>(Pronounced: Yana Pav-LA-sek)</i><br/>
+                      <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;pavlasek [at] umich [dot] edu
+                    </p>
+                    <ul class="icons">
+                      <li><a href="https://scholar.google.ca/citations?user=yJS-u7IAAAAJ&hl=en"><i class="fa-brands fa-google-scholar"></i></a></li>
+                      <li><a href="https://www.linkedin.com/in/janapavlasek/"><i class="fa-brands fa-linkedin"></i></a></li>
+                      <li><a href="https://github.com/janapavlasek"><i class="fa-brands fa-github"></i></a></li>
+                      <li><a href="https://twitter.com/janapavlasek"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                  </header>
+                </div>
                 <div class="container">
                   <header class="major">
                     <h2>Hello.</h2>
@@ -88,7 +90,6 @@
 
                   <!-- <p>You can reach me by email: pavlasek [at] umich [dot] edu</p> -->
 
-                  <!-- <p>[ <a href="files/cv.pdf">View my CV</a> ]</p> -->
                 </div>
               </section>
 
@@ -96,11 +97,53 @@
                 <div class="container">
 
                   <header id="pubs">
-                    <h3>Research</h3>
-                    <p><a href="https://scholar.google.ca/citations?user=yJS-u7IAAAAJ&hl=en" style="border-bottom: none;"><i class="fa-brands fa-google-scholar"></i>&nbsp;&nbsp;Google Scholar</a></p>
+                    <h3>Research Projects</h3>
                   </header>
 
-                  <div id="includeBib" class="pub"></div>
+                  <p>Here are some of my recent, representative publications and projects. For all my papers, see my <a href="#pubs">publications section</a> or my&nbsp;&nbsp;<a href="https://scholar.google.ca/citations?user=yJS-u7IAAAAJ&hl=en"><i class="fa-brands fa-google-scholar"></i>&nbsp;&nbsp;Google Scholar</a>.</p>
+                  <div class="features">
+                      <article>
+                          <a href="https://progress.eecs.umich.edu/projects/stein-bp" class="image"><img src="images/projects/multi_robot_svbp.jpg" alt="" /></a>
+                          <div class="inner">
+                              <h4>Distributed Inference for Multi-Robot Coordination</h4>
+                              <p>How can we capture the complexity of multi-robot coordination? We propose Stein Variational Belief Propagation, an algorithm for performing inference on graphs. Then, we use it to infer trajectories for decentralized multi-robot control.</p>
+                              <a href="https://openreview.net/pdf?id=fDsqkXx1Ild"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;Preprint  </a>&nbsp;&nbsp;
+                              <a href="https://progress.eecs.umich.edu/projects/stein-bp"> <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website </a>
+                          </div>
+                      </article>
+                      <article>
+                          <a href="/projects/goal-sets" class="image"><img src="images/projects/goal-sets.jpg" alt="" /></a>
+                          <div class="inner">
+                              <h4>Planning to Uncertain Goals</h4>
+                              <p>How can we plan to arbitrary goal regions? We looked out how to plan to goals that are hard to model (e.g. stable grasping) by using valid goal samples directly as a planning objective.</p>
+                              <a href="https://proceedings.mlr.press/v229/pavlasek23a.html"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;CoRL '23 Paper  </a>&nbsp;&nbsp;
+                              <a href="https://youtu.be/0fYLgBCSw9U"> <i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video  </a>&nbsp;&nbsp;
+                              <a href="/projects/goal-sets"> <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website </a>
+                          </div>
+                      </article>
+                      <article>
+                          <a href="https://progress.eecs.umich.edu/projects/tool-parts/" class="image"><img src="images/projects/tool-parts.jpg" alt="" /></a>
+                          <div class="inner">
+                              <h4>Articulated Object Pose Estimation by Parts</h4>
+                              <p>Pose estimation is challenging in heavy clutter with many occlusions. We model objects as graphs of their parts and fuse known geometric priors with a learned likelihood to get robust pose estimates for articulated objects.</p>
+                              <a href="https://arxiv.org/abs/2008.02881"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;IROS '20 Paper  </a>&nbsp;&nbsp;
+                              <a href="https://youtu.be/qwIuUwkwykI"> <i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video  </a>&nbsp;&nbsp;
+                              <a href="https://progress.eecs.umich.edu/projects/tool-parts/"> <i class="fa-solid fa-link"></i>&nbsp;&nbsp;Website </a>
+                          </div>
+                      </article>
+                      <article>
+                        <a href="https://hellorob.org" class="image"><img src="images/projects/dtc_bootcamp_mbot.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h4>Distributed Teaching Collaboratives for Robotics</h4>
+                            <p>How can we scale robotics and AI education? In a Distributed Teaching Collaborative, instructors at different universities share resources by offering courses in parallel. We're teaching an introductory robotics class with real robots at Michigan and partner institutions.</p>
+                            <a href="https://hellorob.org"> <i class="fa-solid fa-robot"></i>&nbsp;&nbsp;Learn about the HelloRob course</a>
+                        </div>
+                    </article>
+                  </div>
+
+                  <!-- <hr /> -->
+
+                  <!-- <div id="includeBib" class="pub"></div> -->
                 </div>
               </section>
 
@@ -213,9 +256,9 @@
       <script src="assets/js/main.js"></script>
 
       <script>
-        $(function(){
-          $("#includeBib").load("pubs.html");
-        });
+        // $(function(){
+        //   $("#includeBib").load("pubs_list.html");
+        // });
       </script>
 
   </body>
