@@ -1841,6 +1841,35 @@ input, select, textarea {
   color: #B2156E;
 }
 
+/* Initial state of the div, hidden */
+.bibtex.hidden {
+  display: none;
+}
+
+/* Visible state of the div */
+.bibtex {
+  /* width: 200px;
+  height: 100px; */
+  background-color: #f2f2f2;
+  border: 1px solid #d1d1d1;
+  transition: height 0.3s ease-in-out, display 0.3s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+  overflow-x: scroll;
+  border-radius: 10px;
+  font-size: 0.75em;
+  line-height: 1.75em;
+}
+
+/* Expanded state of the div */
+.bibtex.expanded {
+  height: 300px; /* New height when the div is expanded */
+}
+
+.bibtex > pre {
+  margin: 0.5em 1em;
+}
+
 /* Icon */
 
   ul.icons li a {

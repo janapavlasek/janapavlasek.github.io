@@ -16,7 +16,7 @@ $SCRIPT_DIR/bibtex2html -s unsrt --no-abstract --no-keywords --nodoc --nobibsour
 
 echo
 echo "Reformatting raw output..."
-python3 scripts/process_pubs.py $WEB_DIR/$OUTFILE.html
+python3 scripts/process_pubs.py $WEB_DIR/$OUTFILE.html $BIB_DIR/pubs.bib
 
 echo
 echo "Done!"
