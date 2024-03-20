@@ -43,11 +43,14 @@ def format_citation(citation, venue_strings):
 
     new_lines = []
     for line in citation:
-        # If this is the venue name and it's a string, replace it.
-        if line.strip().startswith("booktitle"):
-            venue = line.split("=")[1].strip().replace(",", "")
-            if venue in venue_strings.keys():
-                line = line.replace(venue, venue_strings[venue])
+        # If any strings are used, replace them. TODO: test.
+        for bib_str in venue_strings.keys():
+            if bib_str in line:
+                line = line.replace(bib_str, venue_strings[bib_str])
+        # if line.strip().startswith("booktitle") or line.strip().startswith("journal"):
+        #     venue = line.split("=")[1].strip().replace(",", "")
+        #     if venue in venue_strings.keys():
+        #         line = line.replace(venue, venue_strings[venue])
 
         # Don't add any lines that correspond to special keys.
         is_special = any([line.strip().startswith(k) for k in SPECIAL_KEYS])
