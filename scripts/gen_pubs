@@ -1,10 +1,20 @@
 #!/bin/bash
+set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-SCRIPT_DIR="$DIR/bibtex2html-1.99-linux"
 BIB_DIR="$DIR/../bib"
 WEB_DIR="$DIR/.."
 OUTFILE="pubs_list"
+
+# Detect operating system and set appropriate script directory for bibtex2html.
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    SCRIPT_DIR="$DIR/bibtex2html-1.99-mac"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    SCRIPT_DIR="$DIR/bibtex2html-1.99-linux"
+else
+    echo "Unsupported operating system: $OSTYPE"
+    exit 1
+fi
 
 $SCRIPT_DIR/bibtex2html -s unsrt --no-abstract --no-keywords --nodoc --nobibsource \
     --no-keys -nodoi -noeprint -linebreak -d -r \
